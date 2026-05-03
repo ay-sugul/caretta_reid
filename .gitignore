@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Tooling cache
+.pytest_cache/
+.gradio/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local env
+.env
+
+# Data artifacts and large files
+data/raw/images/
+data/raw/annotations.json
+data/processed/
+*.pt
+*.pth
+*.ckpt
