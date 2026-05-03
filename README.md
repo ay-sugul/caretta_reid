@@ -14,6 +14,33 @@ pip install -r requirements.txt
 
 4. `.env.example` dosyasını `.env` olarak kopyalayın ve gerekirse değerleri düzenleyin.
 
+## Veri Kurulumu
+
+Bu repoda büyük veri dosyaları GitHub limitleri nedeniyle tutulmaz. Özellikle aşağıdaki yolları sizin doldurmanız gerekir:
+
+- `data/raw/images/` (ham görseller)
+- `data/raw/annotations.json` (COCO annotation)
+- `data/raw/metadata.csv`
+- `data/raw/metadata_splits.csv`
+
+Beklenen temel dizin yapısı:
+
+```text
+data/
+	raw/
+		images/
+		annotations.json
+		metadata.csv
+		metadata_splits.csv
+	processed/
+```
+
+Veri dosyalarını yerleştirdikten sonra embedding veritabanını oluşturun:
+
+```bash
+python -m caretta_reid.database.embedding_store
+```
+
 ## .env.example
 
 Örnek yapı:
@@ -35,6 +62,7 @@ CARETTA_BATCH_SIZE=8
 CARETTA_IMAGE_SIZE=224
 CARETTA_PRETRAINED_BACKBONE=true
 CARETTA_USE_GPU_IF_AVAILABLE=true
+CARETTA_DEBUG_MODE=false
 CARETTA_DEV_TURTLE_IDS=t001,t002,t003,t004,t005,t006,t007,t008,t009,t010
 ```
 
